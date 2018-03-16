@@ -16,7 +16,7 @@
     <h1>Hoppy the frogs</h1>
     <X3D xmlns="http://www.web3d.org/specifications/x3d-namespace">
       <Scene>
-              
+
         <Shape DEF = 'Axes'>
           <IndexedLineSet
               coordIndex=" 0 1 -1 0 2 -1 0 3 -1"
@@ -26,8 +26,8 @@
           <Color color="1 0 0, 0 1 0, 0 0 1"/>
         </IndexedLineSet>
       </Shape>
-              
-        //Torso
+
+        <!--    Torso     -->
         <Shape DEF = 'Torso'>
           <IndexedLineSet
             coordIndex = '0 1 2 3 4 0 -1 0 5 -1 1 5 -1 2 5 -1 3 5 -1 4 5 -1 0 6 -1 1 6 -1 2 6 -1 3 6 -1 4 6 -1'>
@@ -35,6 +35,8 @@
         </IndexedLineSet>
         </Shape>
      <Transform translation="2 0 0">
+
+       <!-- Head -->
        <Shape DEF = 'Head'>
             <IndexedLineSet
               coordIndex = '0 1 2 3 0 -1 0 4 -1 1 4 -1 2 4 -1 3 4 -1 0 5 -1 1 5 -1 2 5 -1 3 5 -1'>
