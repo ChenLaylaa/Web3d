@@ -22,10 +22,16 @@
               coordIndex=" 0 1 -1 0 2 -1 0 3 -1"
               colorPerVertex="true"
               colorIndex="0 0 -1 1 1 -1 2 2 -1">
-          <Coordinate point="0 0 0, 10 0 0, 0 10 0, 0 0 10"/>
+          <Coordinate point="0 0 0, 3 0 0, 0 3 0, 0 0 3"/>
           <Color color="1 0 0, 0 1 0, 0 0 1"/>
         </IndexedLineSet>
       </Shape>
+
+      <!--  Head Axes -->
+      <Transform translation = '1.309 0 0'>
+        <Shape USE = 'Axes'>
+        </Shape>
+      </Transform>
 
         <!--    Torso     -->
         <Shape DEF = 'Torso'>
@@ -34,7 +40,7 @@
           <Coordinate point = '-1 0 0, -0.309 0 0.915, 0.809 0 0.588, 0.809 0 -0.588, -0.309 0 -0.915, 0 0.5 0, 0 -0.5 0'/>
         </IndexedLineSet>
         </Shape>
-     <Transform translation="2 0 0">
+     <Transform translation="1.309 0 0">
 
        <!-- Head -->
        <Shape DEF = 'Head'>
@@ -50,7 +56,7 @@
                                   '/>
           </IndexedLineSet>
       </Shape>
-    </Transform>
+  </Transform>
       </Scene>
     </X3D>
   </body>
