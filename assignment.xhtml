@@ -61,6 +61,7 @@
           rotation='0 0 1 -0.785'
           translation='1.159 -0.35 -0.588'
         >
+
           <!-- Head -->
           <Shape DEF='Diamond'>
             <IndexedLineSet
@@ -98,7 +99,17 @@
             <Shape USE='Axes' />
             </Transform>
 
+            <!-- FRKnee -->
+            <Transform translation="2.013 -0.704 0.588">
+              <Shape USE='Diamond' />
+              <Shape USE='Axes' />
+            </Transform>
 
+            <!-- FLKnee -->
+            <Transform translation="2.013 -0.704 -0.588">
+              <Shape USE='Diamond' />
+              <Shape USE='Axes' />
+            </Transform>
 
 
     </Scene>
