@@ -214,6 +214,29 @@
                                       <Shape USE='FRFoot' />
                                       </Transform>
 
+                                      <!-- LEye -->
+                                      <Transform
+                                        scale='0.08 0.08 0.08'
+                                        translation='1.559 0 -0.15'
+                                      >
+                                        <Shape DEF='Eye'>
+                                          <Appearance>
+                                            <Material
+                                              diffuseColor='0 0 0'
+                                            />
+                                          </Appearance>
+                                          <Sphere/>
+                                        </Shape>
+                                        </Transform>
+
+                                        <!-- REye -->
+                                        <Transform
+                                          scale='0.08 0.08 0.08'
+                                          translation='1.559 0 0.15'
+                                        >
+                                          <Shape USE='Eye' />
+                                          </Transform>
+
 
     </Scene>
   </X3D>
