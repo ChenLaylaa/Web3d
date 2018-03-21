@@ -28,12 +28,16 @@
 
       <Shape DEF='Axes'>
         <IndexedLineSet
-          coordIndex=" 0 1 -1 0 2 -1 0 3 -1"
-          colorPerVertex="true"
-          colorIndex="0 0 -1 1 1 -1 2 2 -1"
+          coordIndex=' 0 1 -1 0 2 -1 0 3 -1'
+          colorPerVertex='true'
+          colorIndex='0 0 -1 1 1 -1 2 2 -1'
         >
-          <Coordinate point="0 0 0, 1 0 0, 0 1 0, 0 0 1" />
-          <Color color="1 0 0, 0 1 0, 0 0 1" />
+          <Coordinate
+            point='0 0 0, 1 0 0, 0 1 0, 0 0 1'
+          />
+          <Color
+            color='1 0 0, 0 1 0, 0 0 1'
+          />
           </IndexedLineSet>
       </Shape>
 
@@ -57,9 +61,12 @@
 
 
         <!-- FRFoot -->
-        <Transform translation="2.513 -0.704 0.588">
+        <Transform
+          DEF='FRFoot'
+          translation='2.513 -0.704 0.588'
+        >
           <!-- Triangle -->
-          <Shape DEF="Triangle">
+          <Shape DEF='Triangle'>
             <IndexedLineSet
               coordIndex='0 1 -1 1 2 -1 0 2 -1'
             >
@@ -70,22 +77,22 @@
           </Shape>
           <Shape USE='Axes' />
 
-        </Transform>
+          </Transform>
 
 
-        <!-- FLleg -->
-        <Transform
-          rotation='0 0 1 -0.785'
-          translation='1.159 -0.35 -0.588'
-        >
+          <!-- FLleg -->
+          <Transform
+            rotation='0 0 1 -0.785'
+            translation='1.159 -0.35 -0.588'
+          >
 
-          <!-- Head -->
-          <Shape DEF='Diamond'>
-            <IndexedLineSet
-              coordIndex='0 1 2 3 0 -1 0 4 -1 1 4 -1 2 4 -1 3 4 -1 0 5 -1 1 5 -1 2 5 -1 3 5 -1'
-            >
-              <Coordinate
-                point='-0.5 0 0
+            <!-- Head -->
+            <Shape DEF='Diamond'>
+              <IndexedLineSet
+                coordIndex='0 1 2 3 0 -1 0 4 -1 1 4 -1 2 4 -1 3 4 -1 0 5 -1 1 5 -1 2 5 -1 3 5 -1'
+              >
+                <Coordinate
+                  point='-0.5 0 0
                                    0 0 0.25
                                    0.5 0 0
                                    0 0 -0.25
@@ -93,47 +100,119 @@
                                    0 -0.25 0
 
                                    '
-              />
-              </IndexedLineSet>
-          </Shape>
+                />
+                </IndexedLineSet>
+            </Shape>
 
-          <Shape USE='Axes' />
-          </Transform>
-
-
-
-          <!-- head -->
-          <Transform translation="1.309 0 0">
-            <Shape USE='Diamond' />
-          </Transform>
-
-          <!-- FRleg -->
-          <Transform
-            rotation='0 0 1 -0.785'
-            translation='1.159 -0.35 0.588'
-          >
-            <Shape USE='Diamond' />
             <Shape USE='Axes' />
             </Transform>
 
-            <!-- FRKnee -->
-            <Transform translation="2.013 -0.704 0.588">
+
+
+            <!-- head -->
+            <Transform
+              translation='1.309 0 0'
+            >
               <Shape USE='Diamond' />
-              <Shape USE='Axes' />
-            </Transform>
+              </Transform>
 
-            <!-- FLKnee -->
-            <Transform translation="2.013 -0.704 -0.588">
-              <Shape USE='Diamond' />
-              <Shape USE='Axes' />
-            </Transform>
+              <!-- FRleg -->
+              <Transform
+                rotation='0 0 1 -0.785'
+                translation='1.159 -0.35 0.588'
+              >
+                <Shape USE='Diamond' />
+                <Shape USE='Axes' />
+                </Transform>
 
-            <!-- FLFoot -->
-            <Transform translation="2.513 -0.704 -0.588">
-              <Shape USE='Triangle' />
-              <Shape USE='Axes' />
-            </Transform>
+                <!-- FRKnee -->
+                <Transform
+                  translation='2.013 -0.704 0.588'
+                >
+                  <Shape USE='Diamond' />
+                  <Shape USE='Axes' />
+                  </Transform>
 
+                  <!-- FLKnee -->
+                  <Transform
+                    translation='2.013 -0.704 -0.588'
+                  >
+                    <Shape USE='Diamond' />
+                    <Shape USE='Axes' />
+                    </Transform>
+
+                    <!-- FLFoot -->
+                    <Transform
+                      DEF='FLFoot'
+                      translation='2.513 -0.704 -0.588'
+                    >
+                      <Shape USE='Triangle' />
+                      <Shape USE='Axes' />
+                      </Transform>
+
+                      <!--BLLeg-->
+                      <Transform
+                        DEF='BLLeg'
+                        rotation='0 1 0 1.57'
+                        translation='-1 0 -0.5'
+                      >
+                        <Shape USE="Diamond" />
+                        <Shape USE='Axes' />
+                        </Transform>
+
+                        <!--BRLeg-->
+                        <Transform
+                          DEF="BRLeg"
+                          rotation='0 1 0 1.57'
+                          translation='-1 0 0.5'
+                        >
+                          <Shape USE='Diamond' />
+                          <Shape USE='Axes' />
+                          </Transform>
+
+                          <!--BLKnee-->
+                          <Transform
+                            rotation='1 0 0 0.785'
+                            translation='0 0 -1'
+                          >
+                            <Shape USE='BRLeg' />
+                            </Transform>
+
+                            <!--BRKnee-->
+                            <Transform
+                              rotation='1 0 0 -0.785'
+                              translation='0 0 1'
+                            >
+                              <Shape USE='BLLeg' />
+                              </Transform>
+
+                              <!--BLLeg2 -->
+                              <Transform
+                                translation='0 -0.707 -0.293'
+                              >
+                                <Shape USE='BLLeg' />
+                                </Transform>
+
+                                <!--BRLeg2 -->
+                                <Transform
+                                  translation='0 -0.707 0.293'
+                                >
+                                  <Shape USE='BRLeg' />
+                                  </Transform>
+
+                                  <!-- BLFoot -->
+                                  <Transform
+                                    translation='-3.516 0 -0.707'
+                                  >
+                                    <Shape USE='FLFoot' />
+                                    </Transform>
+
+                                    <!-- BRFoot -->
+                                    <Transform
+                                      translation='-3.516 0 0.707'
+                                    >
+                                      <Shape USE='FRFoot' />
+                                      </Transform>
 
 
     </Scene>
