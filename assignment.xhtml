@@ -184,11 +184,6 @@
                         <Shape USE='Axes' />
                         </Transform>
 
-                        <!-- Back leg Animation (not finished)
-                        <Transform
-                          DEF="Aangle"
-                          rotation="1 0 0 0"
-                        > -->
 
                         <!--BLLeg-->
                         <Transform
@@ -288,72 +283,116 @@
                                             <Shape USE='Eye' />
                                             </Transform>
 
-                                            </Transform>
+                                            <!-- REye -->
+                                            <Transform
+                                              DEF='REye'
+                                              scale='0.08 0.08 0.08'
+                                              translation='1.559 0 0.15'
+                                            >
+                                              <Shape USE='Eye' />
+                                              </Transform>
 
-                                            <!--Animation -->
-                                            <TimeSensor
-                                              DEF="AngleTimer"
-                                              cycleInterval='8'
-                                              loop="true"
-                                            />
 
 
-                                            <!--  Rotation (not finished)
-                                              <OrientationInterpolator
-                                                DEF="AInterpolator"
-                                                key='0 1'
-                                                keyValue='0 1 0 0, 1 0 0 1.57'
+                                              <!--Animation -->
+                                              <TimeSensor
+                                                DEF="AngleTimer"
+                                                cycleInterval='8'
+                                                loop="true"
+                                                enabled='true'
                                               />
 
+
+                                              <!--Animation -->
+                                              <TimeSensor
+                                                DEF="AngleTimer"
+                                                cycleInterval='
+                                                8
+                                                '
+                                                loop="true"
+                                                enabled='false
+                                                '
+                                              />
+
+                                              <!--  Jump -->
+                                              <PositionInterpolator
+                                                DEF="AngleInterpolator"
+                                                key='0
+                                                0.25
+                                                0.5
+                                                1
+                                                '
+                                                keyValue='0
+                                                1
+                                                0
+                                                0,
+                                                0
+                                                0
+                                                1
+                                                3.14,
+                                                0
+                                                1
+                                                0
+                                                0
+                                                '
+                                              />
                                               <ROUTE
                                                 fromNode="AngleTimer"
                                                 fromField="fraction_changed"
-                                                toNode="AInterpolator"
+                                                toNode="AngleInterpolator"
                                                 toField="set_fraction"
                                               />
                                               <ROUTE
-                                                fromNode="AInterpolator"
+                                                fromNode="AngleInterpolator"
                                                 fromField="value_changed"
-                                                toNode="Aangle"
-                                                toField="set_rotation"
-                                              /> -->
+                                                toNode="JumpAngle"
+                                                toField="set_translation"
+                                              />
+                                              </Transform>
 
-                                            <!--  Jump -->
-                                            <PositionInterpolator
-                                              DEF="AngleInterpolator"
-                                              key='0 0.25 0.5 1'
-                                              keyValue='0 1 0 0, 0 0 1 3.14, 0 1 0 0'
-                                            />
-                                            <ROUTE
-                                              fromNode="AngleTimer"
-                                              fromField="fraction_changed"
-                                              toNode="AngleInterpolator"
-                                              toField="set_fraction"
-                                            />
-                                            <ROUTE
-                                              fromNode="AngleInterpolator"
-                                              fromField="value_changed"
-                                              toNode="JumpAngle"
-                                              toField="set_translation"
-                                            />
-
-                                            <!-- Water -->
-                                            <Shape DEF='Water'>
-                                              <IndexedFaceSet
-                                                solid='false'
-                                                coordIndex='0 1 2 3 0 -1'
+                                              <!-- Water -->
+                                              <Shape
+                                                DEF='Water
+                                                '
                                               >
-                                                <Coordinate
-                                                  point='-2 -0.954 3, 10 -0.954 3, 10 -0.954 -3, -2 -0.954 -3'
-                                                />
-                                                </IndexedFaceSet>
-
-                                                <Appearance>
-                                                  <Material
-                                                    diffuseColor='0 0.6 0.8'
+                                                <IndexedFaceSet
+                                                  solid='false
+                                                '
+                                                  coordIndex='0
+                                                1
+                                                2
+                                                3
+                                                0
+                                                -1
+                                                '
+                                                >
+                                                  <Coordinate
+                                                    point='-2
+                                                -0.954
+                                                3,
+                                                10
+                                                -0.954
+                                                3,
+                                                10
+                                                -0.954
+                                                -3,
+                                                -2
+                                                -0.954
+                                                -3
+                                                '
                                                   />
-                                                </Appearance>
-                                            </Shape>
+                                                  </IndexedFaceSet>
+
+                                                  <Appearance>
+                                                    <Material
+                                                      diffuseColor='0
+                                                0.6
+                                                0.8
+                                                '
+                                                    />
+                                                  </Appearance>
+                                                  </Shape>
+
 
 
     </Scene>
