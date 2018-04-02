@@ -184,121 +184,121 @@
                         <Shape USE='Axes' />
                         </Transform>
 
-                        <!-- Back leg Animation (not finished) -->
+                        <!-- Back leg Animation (not finished)
                         <Transform
                           DEF="Aangle"
                           rotation="1 0 0 0"
-                        >
+                        > -->
 
-                          <!--BLLeg-->
+                        <!--BLLeg-->
+                        <Transform
+                          DEF='BLLeg'
+                          rotation='0 1 0 1.57'
+                          translation='-1 0 -0.5'
+                        >
+                          <Shape USE="Diamond" />
+                          <Shape USE='Axes' />
+                          </Transform>
+
+                          <!--BRLeg-->
                           <Transform
-                            DEF='BLLeg'
+                            DEF='BRLeg'
                             rotation='0 1 0 1.57'
-                            translation='-1 0 -0.5'
+                            translation='-1 0 0.5'
                           >
-                            <Shape USE="Diamond" />
+                            <Shape USE='Diamond' />
                             <Shape USE='Axes' />
                             </Transform>
 
-                            <!--BRLeg-->
+                            <!--BLKnee-->
                             <Transform
-                              DEF='BRLeg'
-                              rotation='0 1 0 1.57'
-                              translation='-1 0 0.5'
+                              DEF='BLKnee'
+                              rotation='1 0 0 0.785'
+                              translation='0 0 -1'
                             >
-                              <Shape USE='Diamond' />
-                              <Shape USE='Axes' />
+                              <Shape USE='BRLeg' />
                               </Transform>
 
-                              <!--BLKnee-->
+                              <!--BRKnee-->
                               <Transform
-                                DEF='BLKnee'
-                                rotation='1 0 0 0.785'
-                                translation='0 0 -1'
+                                DEF='BRKnee'
+                                rotation='1 0 0 -0.785'
+                                translation='0 0 1'
                               >
-                                <Shape USE='BRLeg' />
+                                <Shape USE='BLLeg' />
                                 </Transform>
 
-                                <!--BRKnee-->
+                                <!--BLLeg2 -->
                                 <Transform
-                                  DEF='BRKnee'
-                                  rotation='1 0 0 -0.785'
-                                  translation='0 0 1'
+                                  DEF='BLLeg2'
+                                  translation='0 -0.707 -0.293'
                                 >
                                   <Shape USE='BLLeg' />
                                   </Transform>
 
-                                  <!--BLLeg2 -->
+                                  <!--BRLeg2 -->
                                   <Transform
-                                    DEF='BLLeg2'
-                                    translation='0 -0.707 -0.293'
+                                    DEF='BRLeg2'
+                                    translation='0 -0.707 0.293'
                                   >
-                                    <Shape USE='BLLeg' />
+                                    <Shape USE='BRLeg' />
                                     </Transform>
 
-                                    <!--BRLeg2 -->
+                                    <!-- BLFoot -->
                                     <Transform
-                                      DEF='BRLeg2'
-                                      translation='0 -0.707 0.293'
+                                      DEF='BLFoot'
+                                      translation='-3.516 0 -0.707'
                                     >
-                                      <Shape USE='BRLeg' />
+                                      <Shape USE='FLFoot' />
                                       </Transform>
 
-                                      <!-- BLFoot -->
+                                      <!-- BRFoot -->
                                       <Transform
-                                        DEF='BLFoot'
-                                        translation='-3.516 0 -0.707'
+                                        DEF='BRFoot'
+                                        translation='-3.516 0 0.707'
                                       >
-                                        <Shape USE='FLFoot' />
+                                        <Shape USE='FRFoot' />
                                         </Transform>
 
-                                        <!-- BRFoot -->
+                                        <!-- End of rotation animation
+                                          </Transform>-->
+
+                                        <!-- LEye -->
                                         <Transform
-                                          DEF='BRFoot'
-                                          translation='-3.516 0 0.707'
+                                          DEF='LEye'
+                                          scale='0.08 0.08 0.08'
+                                          translation='1.559 0 -0.15'
                                         >
-                                          <Shape USE='FRFoot' />
+                                          <Shape DEF='Eye'>
+                                            <Appearance>
+                                              <Material
+                                                diffuseColor='0 0 0'
+                                              />
+                                            </Appearance>
+                                            <Sphere/>
+                                          </Shape>
                                           </Transform>
 
-                                          <!-- End of rotation animation -->
-                                          </Transform>
-
-                                          <!-- LEye -->
+                                          <!-- REye -->
                                           <Transform
-                                            DEF='LEye'
+                                            DEF='REye'
                                             scale='0.08 0.08 0.08'
-                                            translation='1.559 0 -0.15'
+                                            translation='1.559 0 0.15'
                                           >
-                                            <Shape DEF='Eye'>
-                                              <Appearance>
-                                                <Material
-                                                  diffuseColor='0 0 0'
-                                                />
-                                              </Appearance>
-                                              <Sphere/>
-                                            </Shape>
+                                            <Shape USE='Eye' />
                                             </Transform>
 
-                                            <!-- REye -->
-                                            <Transform
-                                              DEF='REye'
-                                              scale='0.08 0.08 0.08'
-                                              translation='1.559 0 0.15'
-                                            >
-                                              <Shape USE='Eye' />
-                                              </Transform>
+                                            </Transform>
 
-                                              </Transform>
-
-                                              <!--Animation -->
-                                              <TimeSensor
-                                                DEF="AngleTimer"
-                                                cycleInterval='8'
-                                                loop="true"
-                                              />
+                                            <!--Animation -->
+                                            <TimeSensor
+                                              DEF="AngleTimer"
+                                              cycleInterval='8'
+                                              loop="true"
+                                            />
 
 
-                                              <!--  Rotation (not finished) -->
+                                            <!--  Rotation (not finished)
                                               <OrientationInterpolator
                                                 DEF="AInterpolator"
                                                 key='0 1'
@@ -316,44 +316,44 @@
                                                 fromField="value_changed"
                                                 toNode="Aangle"
                                                 toField="set_rotation"
-                                              />
+                                              /> -->
 
-                                              <!--  Jump -->
-                                              <PositionInterpolator
-                                                DEF="AngleInterpolator"
-                                                key='0 0.25 0.5 1'
-                                                keyValue='0 1 0 0, 0 0 1 3.14, 0 1 0 0'
-                                              />
-                                              <ROUTE
-                                                fromNode="AngleTimer"
-                                                fromField="fraction_changed"
-                                                toNode="AngleInterpolator"
-                                                toField="set_fraction"
-                                              />
-                                              <ROUTE
-                                                fromNode="AngleInterpolator"
-                                                fromField="value_changed"
-                                                toNode="JumpAngle"
-                                                toField="set_translation"
-                                              />
+                                            <!--  Jump -->
+                                            <PositionInterpolator
+                                              DEF="AngleInterpolator"
+                                              key='0 0.25 0.5 1'
+                                              keyValue='0 1 0 0, 0 0 1 3.14, 0 1 0 0'
+                                            />
+                                            <ROUTE
+                                              fromNode="AngleTimer"
+                                              fromField="fraction_changed"
+                                              toNode="AngleInterpolator"
+                                              toField="set_fraction"
+                                            />
+                                            <ROUTE
+                                              fromNode="AngleInterpolator"
+                                              fromField="value_changed"
+                                              toNode="JumpAngle"
+                                              toField="set_translation"
+                                            />
 
-                                              <!-- Water -->
-                                              <Shape DEF='Water'>
-                                                <IndexedFaceSet
-                                                  solid='false'
-                                                  coordIndex='0 1 2 3 0 -1'
-                                                >
-                                                  <Coordinate
-                                                    point='-2 -0.954 3, 10 -0.954 3, 10 -0.954 -3, -2 -0.954 -3'
+                                            <!-- Water -->
+                                            <Shape DEF='Water'>
+                                              <IndexedFaceSet
+                                                solid='false'
+                                                coordIndex='0 1 2 3 0 -1'
+                                              >
+                                                <Coordinate
+                                                  point='-2 -0.954 3, 10 -0.954 3, 10 -0.954 -3, -2 -0.954 -3'
+                                                />
+                                                </IndexedFaceSet>
+
+                                                <Appearance>
+                                                  <Material
+                                                    diffuseColor='0 0.6 0.8'
                                                   />
-                                                  </IndexedFaceSet>
-
-                                                  <Appearance>
-                                                    <Material
-                                                      diffuseColor='0 0.6 0.8'
-                                                    />
-                                                  </Appearance>
-                                              </Shape>
+                                                </Appearance>
+                                            </Shape>
 
 
     </Scene>
