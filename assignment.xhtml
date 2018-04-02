@@ -288,6 +288,8 @@
                                               <Shape USE='Eye' />
                                               </Transform>
 
+                                              <TouchSensor DEF='StartStop' />
+
                                               </Transform>
 
                                               <!--Animation -->
@@ -295,6 +297,7 @@
                                                 DEF="AngleTimer"
                                                 cycleInterval='8'
                                                 loop="true"
+                                                enabled='false'
                                               />
 
 
@@ -303,6 +306,13 @@
                                                 DEF="AInterpolator"
                                                 key='0 1'
                                                 keyValue='0 1 0 0, 1 0 0 1.57'
+                                              />
+
+                                              <ROUTE
+                                                fromNode='StartStop'
+                                                fromField='isActive'
+                                                toNode='AngleTimer'
+                                                toField='enabled'
                                               />
 
                                               <ROUTE
