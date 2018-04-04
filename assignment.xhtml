@@ -29,7 +29,10 @@
     height="400px"
   >
     <Scene>
+      <!-- Root -->
+      <Transform DEF='Root'>
 
+<<<<<<< HEAD
       <!-- Jump animation transform -->
       <Transform
         DEF="Root"
@@ -96,6 +99,11 @@
 
           <!-- Head -->
           <Shape DEF='Diamond'>
+=======
+        <!-- Torso -->
+        <Transform DEF='Torso'>
+          <Shape>
+>>>>>>> 6762e56397f3f3380f337a138ade278efa694b26
             <IndexedFaceSet
               solid='false'
               coordIndex='0 1 4 0 -1 1 2 4 -1 2 3 4 -1 3 0 4 -1 0 1 5 0 -1 2 5 1 -1 2 3 5 -1 3 0 5 -1 '
@@ -108,7 +116,21 @@
               <Appearance>
                 <Material diffuseColor='green' />
               </Appearance>
+          </Shape>
 
+          <Shape DEF='Axes'>
+            <IndexedLineSet
+              coordIndex=' 0 1 -1 0 2 -1 0 3 -1'
+              colorPerVertex='true'
+              colorIndex='0 0 -1 1 1 -1 2 2 -1'
+            >
+              <Coordinate
+                point='0 0 0, 1 0 0, 0 1 0, 0 0 1'
+              />
+              <Color
+                color='1 0 0, 0 1 0, 0 0 1'
+              />
+              </IndexedLineSet>
           </Shape>
 
 
@@ -118,6 +140,7 @@
             DEF='FRFoot'
             translation='2.513 -0.704 0.588'
           >
+<<<<<<< HEAD
 
 
             <!-- Triangle -->
@@ -137,37 +160,119 @@
 
             </Shape>
             <Shape USE='Axes' />
+=======
+            <Shape DEF='Diamond'>
+              <IndexedFaceSet
+                solid='false'
+                coordIndex='0 1 4 0 -1 1 2 4 -1 2 3 4 -1 3 0 4 -1 0 1 5 0 -1 2 5 1 -1 2 3 5 -1 3 0 5 -1 '
+              >
+                <Coordinate
+                  point='-0.5 0 0, 0 0 0.25, 0.5 0 0, 0 0 -0.25, 0 0.25 0, 0 -0.25 0'
+                />
+                </IndexedFaceSet>
 
-            </Transform>
+                <Appearance>
+                  <Material diffuseColor='green' />
+                </Appearance>
 
+            </Shape>
 
-            <!-- FLleg -->
+            <!-- HeadAxes -->
+
             <Transform
-              DEF='FLleg'
-              rotation='0 0 1 -0.785'
-              translation='1.159 -0.35 -0.588'
+              DEF='HeadAxes'
+              translation='-0.5 0 0'
             >
+              <Shape USE='Axes' />
+        </Transform>
 
+        <!-- LEye -->
+        <Transform
+          DEF='LEye'
+          scale='0.08 0.08 0.08'
+          translation='0.25 0 -0.15'
+        >
+          <Shape DEF='Eye'>
+            <Appearance>
+              <Material
+                diffuseColor='0 0 0'
+              />
+            </Appearance>
+            <Sphere/>
+          </Shape>
+      </Transform>
+
+      <!-- REye -->
+      <Transform
+        DEF='REye'
+        scale='0.08 0.08 0.08'
+        translation='0.25 0 0.15'
+      >
+        <Shape USE='Eye' />
+        </Transform>
+        </Transform>
+>>>>>>> 6762e56397f3f3380f337a138ade278efa694b26
+
+        <!-- FRHip -->
+        <Transform DEF='FRHip'>
+
+          <!--FRUpLeg-->
+          <Transform
+            DEF='FRUpLeg'
+            rotation='0 0 1 -0.785'
+            translation='1.159 -0.35 0.588'
+          >
+            <Shape USE='Diamond' />
+            <Shape USE='HeadAxes' />
+
+            <!-- FRKnee -->
+            <Transform
+              translation='0.5 0 0'
+            >
+              <Transform
+                DEF='FRKnee'
+                rotation='0 0 1 0.785'
+              >
+
+<<<<<<< HEAD
               <!-- Head -->
               <Shape DEF='Diamond'>
                 <IndexedFaceSet
                   solid='false'
                   coordIndex='0 1 4 0 -1 1 2 4 -1 2 3 4 -1 3 0 4 -1 0 1 5 0 -1 2 5 1 -1 2 3 5 -1 3 0 5 -1 '
+=======
+                <!-- FRLowLeg -->
+                <Transform
+                  DEF='FRKnee'
+                  translation='0.5 0 0'
+>>>>>>> 6762e56397f3f3380f337a138ade278efa694b26
                 >
-                  <Coordinate
-                    point='-0.5 0 0, 0 0 0.25, 0.5 0 0, 0 0 -0.25, 0 0.25 0, 0 -0.25 0'
-                  />
-                  </IndexedFaceSet>
+                  <Shape USE='Diamond' />
+                  <Shape USE='HeadAxes' />
 
-                  <Appearance>
-                    <Material diffuseColor='green' />
-                  </Appearance>
+                  <!-- FRAnkle -->
+                  <Transform DEF='FRAnkle'>
+                    <!-- FRFoot -->
+                    <Transform
+                      DEF='FRFoot'
+                      translation='0.5 0 0'
+                    >
+                      <!-- Triangle -->
+                      <Shape DEF='Triangle'>
+                        <IndexedFaceSet
+                          coordIndex='0 1 2 0 -1'
+                        >
+                          <Coordinate
+                            point='0 0 0, 0.5 0 0.25 , 0.5 0 -0.25 '
+                          />
 
-              </Shape>
+                          </IndexedFaceSet>
 
-              <Shape USE='Axes' />
-              </Transform>
+                          <Appearance>
+                            <Material diffuseColor='green' />
+                          </Appearance>
 
+<<<<<<< HEAD
               <!-- Head -->
               <Transform
                 DEF='Head'
@@ -203,9 +308,57 @@
                     <Transform
                       DEF='FRKnee'
                       translation='2.013 -0.704 0.588'
+=======
+                      </Shape>
+                      <Shape USE='Axes' />
+
+                  </Transform>
+        </Transform>
+        </Transform>
+        </Transform>
+        </Transform>
+        </Transform>
+        </Transform>
+
+
+
+        <!-- FLHip -->
+        <Transform DEF='FLHip'>
+          <!-- FLUpLeg -->
+          <Transform
+            DEF='FLUpLeg'
+            rotation='0 0 1 -0.785'
+            translation='1.159 -0.35 -0.588'
+          >
+
+            <Shape USE='Diamond' />
+            <Shape USE='HeadAxes' />
+            <!-- FLKnee -->
+            <Transform
+              translation='0.5 0 0'
+            >
+              <Transform
+                rotation='0 0 1 0.785'
+              >
+                <!-- FLLowLeg -->
+                <Transform
+                  DEF='FLLowLeg'
+                  translation='0.5 0 0'
+                >
+                  <Shape USE='Diamond' />
+                  <Shape USE='HeadAxes' />
+
+                  <!-- FLAnkle -->
+                  <Transform DEF='FLAnkle'>
+                    <!-- FLFoot -->
+                    <Transform
+                      DEF='FLFoot'
+                      translation='0.5 0 0'
+>>>>>>> 6762e56397f3f3380f337a138ade278efa694b26
                     >
                       <Shape USE='Diamond' />
                       <Shape USE='Axes' />
+<<<<<<< HEAD
                       </Transform>
 
                       <!-- FLKnee -->
@@ -249,8 +402,126 @@
                               translation='1.559 0 0.15'
                             >
                               <Shape USE='Eye' />
-                              </Transform>
+=======
+                  </Transform>
+        </Transform>
+        </Transform>
+        </Transform>
+        </Transform>
+        </Transform>
+        </Transform>
 
+
+        <!-- RRHip -->
+        <Transform
+          DEF='RRHip'
+          translation='-1 0 0.5'
+        >
+          <!-- RRUpLeg -->
+          <Transform
+            DEF='RRUpLeg'
+            rotation='0 1 0 -1.57'
+          >
+            <Shape USE='Diamond' />
+            <Shape USE='HeadAxes' />
+
+            <!-- RRKnee -->
+            <Transform
+              translation='0.1465 -0.3535 0'
+            >
+              <Transform
+                DEF='RRKnee'
+                rotation='0 0 1 3.925'
+              >
+                <!-- RRLowLeg -->
+                <Transform DEF='RRLowLeg'>
+                  <Shape USE='Diamond' />
+                  <Shape USE='HeadAxes' />
+                  <!-- RRAnkle -->
+                  <Transform DEF='RRAnkle'>
+                    <!-- RRFoot -->
+                    <Transform
+                      rotation='0 0 1 -3.925'
+                    >
+
+                      <Transform
+                        DEF='RRFoot'
+                        translation='0.1465 -0.3535 0'
+                      >
+                        <Shape USE='Diamond' />
+                        <Shape USE='HeadAxes' />
+                        <!-- RRTMT -->
+                        <Transform DEF='RRTMT'>
+                          <!-- RRToes -->
+                          <Transform
+                            DEF='RRToes'
+                            translation='0 0 0'
+                          >
+                            <Shape USE='FRFoot' />
+                        </Transform>
+                  </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+
+
+
+                <!--RLHip -->
+                <Transform DEF='RLHip'>
+                  <!--RLUpLeg-->
+                  <Transform
+                    DEF='RLUpLeg'
+                    rotation='0 1 0 1.57'
+                    translation='-1 0 -0.5'
+                  >
+                    <Shape USE="Diamond" />
+                    <Shape USE='HeadAxes' />
+                    <!--RLKnee-->
+                    <Transform
+                      translation='0.1465 -0.3535 0'
+                    >
+                      <Transform
+                        DEF='RLKnee'
+                        rotation='0 0 1 -2.355'
+                      >
+                        <!-- RLLowLeg -->
+                        <Transform DEF='RLLowLeg'>
+                          <Shape USE="Diamond" />
+                          <Shape USE='HeadAxes' />
+                          <!-- RLAnkle -->
+                          <Transform
+                            DEF='RLAnkle'
+                            rotation='0 0 1 2.355'
+                          >
+                            <!--RLFoot -->
+                            <Transform
+                              DEF='RLFoot'
+                              translation='0.1465 -0.3535 0'
+                            >
+                              <Shape USE="Diamond" />
+                              <Shape USE='HeadAxes' />
+                              <!--RLTMT-->
+                              <Transform DEF='RLTMT'>
+                                <!-- RLToes -->
+                                <Transform DEF='RLToes'>
+                                  <Shape USE='FLFoot' />
+                                </Transform>
+>>>>>>> 6762e56397f3f3380f337a138ade278efa694b26
+                              </Transform>
+                        </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+                </Transform>
+
+<<<<<<< HEAD
                               <!--    WAIT UP
                                 </Transform>
 -->
@@ -396,8 +667,80 @@
                                                     />
                                                   </Appearance>
                                               </Shape>
+=======
+
+>>>>>>> 6762e56397f3f3380f337a138ade278efa694b26
 
 
+                </Transform>
+                </Transform>
+
+
+                <!-- Water -->
+                <Shape DEF='Water'>
+                  <IndexedFaceSet
+                    solid='false'
+                    coordIndex='0 1 2 3 0 -1'
+                  >
+                    <Coordinate
+                      point='-2 -0.954 3, 10 -0.954 3, 10 -0.954 -3, -2 -0.954 -3'
+                    />
+                    </IndexedFaceSet>
+
+                    <Appearance>
+                      <Material
+                        diffuseColor='0 0.6 0.8'
+                      />
+                    </Appearance>
+                </Shape>
+
+
+
+                <!--Animation -->
+                <TimeSensor
+                  DEF="AngleTimer"
+                  cycleInterval='8'
+                  loop="true"
+                  enabled='true'
+                />
+
+                <!-- FRHip -->
+                <OrientationInterolator
+                  DEF='FRHipInterpolator'
+                  key='0 1'
+                  keyValue='0 0 1 0, 0 0 1 0.785'
+                />
+                <ROUTE
+                  fromNode='AngleTimer'
+                  fromField='fraction_changed'
+                  toNode='FRHipInterpolator'
+                  toField='set_fraction'
+                />
+                <ROUTE
+                  fromNode='FRHipInterpolator'
+                  fromField='value_changed'
+                  toNode='FRUpLeg'
+                  toField='set_rotation'
+                />
+
+                <!--  Jump -->
+                <PositionInterpolator
+                  DEF="AngleInterpolator"
+                  key='0 0.25 0.5 1'
+                  keyValue='0 1 0 0, 0 0 1 3.14, 0 1 0 0'
+                />
+                <ROUTE
+                  fromNode="AngleTimer"
+                  fromField="fraction_changed"
+                  toNode="AngleInterpolator"
+                  toField="set_fraction"
+                />
+                <ROUTE
+                  fromNode="AngleInterpolator"
+                  fromField="value_changed"
+                  toNode="Root"
+                  toField="set_translation"
+                />
     </Scene>
     </X3D>
 </body>
